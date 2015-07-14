@@ -1,4 +1,5 @@
 <p>
-  <strong>Name: </strong><%= robot.name %><br>
-  <strong>Favorite Food: </strong><%= robot.favorite_food %>
+  <strong>Name: </strong><%= bold_name robot.name %><br>
+  <strong>Favorite Food: </strong><%= robot.favorite_food %><br>
+  <%= format_time Time.now %>
 </p>
