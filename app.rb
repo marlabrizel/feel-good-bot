@@ -1,3 +1,4 @@
+require './robot'
 require 'bundler'
 Bundler.require
 
@@ -7,6 +8,16 @@ class FeelGoodBot < Sinatra::Base
   get '/' do
     @adjective = ["nice", "alright", "decent"].shuffle.first
     erb :index
+  end
+
+  get '/robots' do
+    @robots = []
+    @robots << Robot.new("Josh", "Potatoes")
+    @robots << Robot.new("R2D2", "Oil")
+    @robots << Robot.new("Bender", "Beer")
+    @robots << Robot.new("C-3PO", "Pollo")
+    @robots << Robot.new("Batman", "Justice")
+    erb :robots
   end
 
   run! if app_file == $0
