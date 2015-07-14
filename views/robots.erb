@@ -1,6 +1,1 @@
-<% @robots.each do |robot| %>
-  <p>
-    <strong>Name: </strong><%= robot.name %><br>
-    <strong>Favorite Food: </strong><%= robot.favorite_food %>
-  </p>
-<% end %>
+<%= partial :'shared/robot', collection: @robots %>
